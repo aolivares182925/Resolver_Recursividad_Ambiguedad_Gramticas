@@ -1,0 +1,10 @@
+F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\bin\Debug\ProyectoGramaticas.exe.config
+F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\bin\Debug\ProyectoGramaticas.exe
+F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\bin\Debug\ProyectoGramaticas.pdb
+F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.csprojAssemblyReference.cache
+F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.Form1.resources
+F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.Properties.Resources.resources
+F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.csproj.GenerateResource.cache
+F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.csproj.CoreCompileInputs.cache
+F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.exe
+F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.pdb
