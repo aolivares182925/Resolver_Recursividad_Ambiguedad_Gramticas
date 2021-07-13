@@ -8,3 +8,13 @@ F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGr
 F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.csproj.CoreCompileInputs.cache
 F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.exe
 F:\Aler\TAREAS UNIVERSIDAD\2021-1\Lab Compiladores\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.pdb
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\bin\Debug\ProyectoGramaticas.exe.config
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\bin\Debug\ProyectoGramaticas.exe
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\bin\Debug\ProyectoGramaticas.pdb
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.csprojAssemblyReference.cache
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.Form1.resources
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.Properties.Resources.resources
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.csproj.GenerateResource.cache
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.csproj.CoreCompileInputs.cache
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.exe
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.pdb

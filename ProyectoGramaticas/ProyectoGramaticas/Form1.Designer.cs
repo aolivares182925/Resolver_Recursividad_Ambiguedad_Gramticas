@@ -38,10 +38,10 @@ namespace ProyectoGramaticas
             this.label1 = new System.Windows.Forms.Label();
             this.txtReglas = new System.Windows.Forms.RichTextBox();
             this.panelBotones1 = new System.Windows.Forms.Panel();
-            this.btnArreglarRecursividad = new System.Windows.Forms.Button();
-            this.btnArreglarAmbiguedad = new System.Windows.Forms.Button();
             this.btnRyA = new System.Windows.Forms.Button();
             this.btnAyR = new System.Windows.Forms.Button();
+            this.btnArreglarRecursividad = new System.Windows.Forms.Button();
+            this.btnArreglarAmbiguedad = new System.Windows.Forms.Button();
             this.panelprograma1.SuspendLayout();
             this.panelPrograma.SuspendLayout();
             this.panelBotones1.SuspendLayout();
@@ -74,9 +74,9 @@ namespace ProyectoGramaticas
             // txtRespuesta
             // 
             this.txtRespuesta.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRespuesta.Location = new System.Drawing.Point(493, 157);
+            this.txtRespuesta.Location = new System.Drawing.Point(422, 157);
             this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(450, 366);
+            this.txtRespuesta.Size = new System.Drawing.Size(521, 366);
             this.txtRespuesta.TabIndex = 9;
             this.txtRespuesta.Text = "";
             // 
@@ -125,7 +125,7 @@ namespace ProyectoGramaticas
             this.txtReglas.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReglas.Location = new System.Drawing.Point(6, 157);
             this.txtReglas.Name = "txtReglas";
-            this.txtReglas.Size = new System.Drawing.Size(450, 366);
+            this.txtReglas.Size = new System.Drawing.Size(389, 366);
             this.txtReglas.TabIndex = 0;
             this.txtReglas.Text = "";
             // 
@@ -140,26 +140,6 @@ namespace ProyectoGramaticas
             this.panelBotones1.Name = "panelBotones1";
             this.panelBotones1.Size = new System.Drawing.Size(200, 548);
             this.panelBotones1.TabIndex = 0;
-            // 
-            // btnArreglarRecursividad
-            // 
-            this.btnArreglarRecursividad.Location = new System.Drawing.Point(12, 130);
-            this.btnArreglarRecursividad.Name = "btnArreglarRecursividad";
-            this.btnArreglarRecursividad.Size = new System.Drawing.Size(182, 55);
-            this.btnArreglarRecursividad.TabIndex = 1;
-            this.btnArreglarRecursividad.Text = "Recursividad";
-            this.btnArreglarRecursividad.UseVisualStyleBackColor = true;
-            this.btnArreglarRecursividad.Click += new System.EventHandler(this.btnArreglarRecursividad_Click);
-            // 
-            // btnArreglarAmbiguedad
-            // 
-            this.btnArreglarAmbiguedad.Location = new System.Drawing.Point(12, 65);
-            this.btnArreglarAmbiguedad.Name = "btnArreglarAmbiguedad";
-            this.btnArreglarAmbiguedad.Size = new System.Drawing.Size(182, 59);
-            this.btnArreglarAmbiguedad.TabIndex = 0;
-            this.btnArreglarAmbiguedad.Text = "Ambigüedad";
-            this.btnArreglarAmbiguedad.UseVisualStyleBackColor = true;
-            this.btnArreglarAmbiguedad.Click += new System.EventHandler(this.btnArreglarAmbiguedad_Click);
             // 
             // btnRyA
             // 
@@ -180,6 +160,26 @@ namespace ProyectoGramaticas
             this.btnAyR.Text = "Ambigüedad y  Recursividad";
             this.btnAyR.UseVisualStyleBackColor = true;
             this.btnAyR.Click += new System.EventHandler(this.btnAyR_Click);
+            // 
+            // btnArreglarRecursividad
+            // 
+            this.btnArreglarRecursividad.Location = new System.Drawing.Point(12, 130);
+            this.btnArreglarRecursividad.Name = "btnArreglarRecursividad";
+            this.btnArreglarRecursividad.Size = new System.Drawing.Size(182, 55);
+            this.btnArreglarRecursividad.TabIndex = 1;
+            this.btnArreglarRecursividad.Text = "Recursividad";
+            this.btnArreglarRecursividad.UseVisualStyleBackColor = true;
+            this.btnArreglarRecursividad.Click += new System.EventHandler(this.btnArreglarRecursividad_Click);
+            // 
+            // btnArreglarAmbiguedad
+            // 
+            this.btnArreglarAmbiguedad.Location = new System.Drawing.Point(12, 65);
+            this.btnArreglarAmbiguedad.Name = "btnArreglarAmbiguedad";
+            this.btnArreglarAmbiguedad.Size = new System.Drawing.Size(182, 59);
+            this.btnArreglarAmbiguedad.TabIndex = 0;
+            this.btnArreglarAmbiguedad.Text = "Ambigüedad";
+            this.btnArreglarAmbiguedad.UseVisualStyleBackColor = true;
+            this.btnArreglarAmbiguedad.Click += new System.EventHandler(this.btnArreglarAmbiguedad_Click);
             // 
             // Form1
             // 
