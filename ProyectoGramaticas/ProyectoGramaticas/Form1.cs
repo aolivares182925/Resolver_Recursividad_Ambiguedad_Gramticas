@@ -303,43 +303,73 @@ namespace ProyectoGramaticas
         private void btnArreglarAmbiguedad_Click(object sender, EventArgs e)
         {
             //crear lista A
-            List<List<string>> A = new List<List<string>>();
-            obtener(A);
-            txtRespuesta.Text = Ambiguedad(A);
+            try
+            {
+                List<List<string>> A = new List<List<string>>();
+                obtener(A);
+                txtRespuesta.Text = Ambiguedad(A);
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
+            }
+            
 
         }
 
         private void btnArreglarRecursividad_Click(object sender, EventArgs e)
         {
-            //crear lista A
-            List<List<string>> A = new List<List<string>>();
-            obtener(A);
+            try
+            {
+                //crear lista A
+                List<List<string>> A = new List<List<string>>();
+                obtener(A);
+                txtRespuesta.Text = Recursividad(A);
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error );
+            }
             
-
-            txtRespuesta.Text = Recursividad(A);
         }
 
         private void btnAyR_Click(object sender, EventArgs e)
         {
-            //crear lista A
-            List<List<string>> A = new List<List<string>>();
-            obtener(A);
-            string Amb = Ambiguedad(A);
-            string Rec = Recursividad(A);
-
-            txtRespuesta.Text = Amb + "\n" + Rec;
-
+            try
+            {
+                //crear lista A
+                List<List<string>> A = new List<List<string>>();
+                obtener(A);
+                string Amb = Ambiguedad(A);
+                string Rec = Recursividad(A);
+                txtRespuesta.Text = Amb + "\n" + Rec;
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
+            }
         }
 
         private void btnRyA_Click(object sender, EventArgs e)
         {
-            //crear lista A
-            List<List<string>> A = new List<List<string>>();
-            obtener(A);
-            string Rec = Recursividad(A);
-            string Amb = Ambiguedad(A);
+            try
+            {
+                //crear lista A
+                List<List<string>> A = new List<List<string>>();
+                obtener(A);
+                string Rec = Recursividad(A);
+                string Amb = Ambiguedad(A);
+                txtRespuesta.Text = Rec + "\n" + Amb;
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message;
+                DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
+            }
             
-            txtRespuesta.Text = Rec + "\n" + Amb;
         }
     }
 }
