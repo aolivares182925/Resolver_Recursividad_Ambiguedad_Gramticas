@@ -292,7 +292,7 @@ namespace ProyectoGramaticas
             }
             R += "}";
             
-            string Respuesta = "Existe ambiguedad en: \n" + R + "\n" +
+            string Respuesta = "Existe recursión en: \n" + R + "\n" +
             "-----------------------------\n";
             SolRecursion(A, X[0], X[1]);
 
