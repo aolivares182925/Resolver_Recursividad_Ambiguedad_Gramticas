@@ -230,7 +230,11 @@ namespace ProyectoGramaticas
             string Respuesta = "";
             for (int i=0;i < A.Count;i++ )
             {
-                Respuesta += "R" + i.ToString() + ": \t" + A[i][0].ToString() + " -> " + A[i][1] + " " + A[i][2] + "\n";
+                if (A[i][1] != "")
+                {
+                    Respuesta += "R" + i.ToString() + ": \t" + A[i][0].ToString() + " -> " + A[i][1] + " " + A[i][2] + "\n";
+                }
+                
             }
 
             return Respuesta;
