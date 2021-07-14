@@ -115,7 +115,8 @@ namespace ProyectoGramaticas
                 A.Add(S);
                 if (!(NotAmb.ContainsKey(Aa[0])))
                 {
-                    List<string> vacio = new List<string> { Aa[0], "vacio", "" };
+                    //List<string> vacio = new List<string> { Aa[0], "vacio", "" };
+                    List<string> vacio = new List<string> { Aa[0], "", "" };
                     A.Add(vacio);
                 }
                 foreach (int k in (List<object>)i.Value)
@@ -223,7 +224,7 @@ namespace ProyectoGramaticas
             }
         }
 
-        // Funcion para mostrar el resultado 
+        // ------------------Funcion para mostrar el resultado ---------------------------------
         private string MostrarResultado(List<List<string>> A)
         {
             //variables
