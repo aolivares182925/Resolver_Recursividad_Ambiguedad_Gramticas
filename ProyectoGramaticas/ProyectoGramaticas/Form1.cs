@@ -245,26 +245,24 @@ namespace ProyectoGramaticas
 
             //obtener datos de llaves
             Dictionary<object, object>.KeyCollection keys = Y[0].Keys;
-            string claves = "";
+            Dictionary<object, object>.ValueCollection values = Y[0].Values;
+            Dictionary<object, object> Dict_aux = Y[0];
+
+
+            string R = "{ ";
             foreach (string llave in keys)
             {
-                claves += llave + " ";
-            }
-            //obtener datos de variables
-            Dictionary<object, object>.ValueCollection values = Y[0].Values;
-            string valores = "";
-            foreach (List<object> lista in values)
-            {
-                int N = lista.Count;
-                string aux = "[ ";
-                foreach (int valor in lista)
+                string x_aux = "[ ";
+                foreach (int x in (List<object>)Dict_aux[llave])
                 {
-                    aux += valor.ToString() + " ";
+                    x_aux += x.ToString() + " ";
                 }
-                aux += "]";
-                valores += aux;
+                x_aux += "]";
+                R += "[ "+ llave + " ]" + " : " + x_aux + " ;";
             }
-            string Respuesta = "Existe ambiguedad en: " + claves + " : " + valores + "\n" +
+            R += "}";
+            
+            string Respuesta = "Existe ambiguedad en: \n" + R + "\n" +
                 "-----------------------------\n";
             SolveAmbiguedad(A, Y[0], Y[1]);
             Respuesta += MostrarResultado(A);
@@ -276,32 +274,26 @@ namespace ProyectoGramaticas
             //resolviendo la recursion
             List<Dictionary<string, List<int>>> X = ExisteRecursion(A);
             //ExisteRecursion recursion en:
-
-            //Mostrar 
-            //obtener datos de las llaves
             Dictionary<string, List<int>>.KeyCollection keys = X[0].Keys;
-            string claves = "";
+            Dictionary<string, List<int>>.ValueCollection values = X[0].Values;
+            Dictionary<string, List<int>> Dict_aux = X[0];
+
+
+            string R = "{ ";
             foreach (string llave in keys)
             {
-                claves += llave + " ";
-            }
-            //obtener datos de variables
-            Dictionary<string, List<int>>.ValueCollection values = X[0].Values;
-            string valores = "";
-            foreach (List<int> lista in values)
-            {
-                int N = lista.Count;
-                string aux = "[ ";
-                foreach (int valor in lista)
+                string x_aux = "[ ";
+                foreach (int x in Dict_aux[llave])
                 {
-                    aux += valor.ToString() + " ";
+                    x_aux += x.ToString() + " ";
                 }
-                aux += "]";
-                valores += aux;
+                x_aux += "]";
+                R += "[ " + llave + " ]" + " : " + x_aux + " ;";
             }
-            string Respuesta = "Existe recursion en: " + claves + " : " + valores + "\n" +
-            //string Respuesta = "Existe recursividad en: " + X[0].Keys.ToString() + " : " + X[0].Values.ToString() + "\n" +
-                "-----------------------------\n";
+            R += "}";
+            
+            string Respuesta = "Existe ambiguedad en: \n" + R + "\n" +
+            "-----------------------------\n";
             SolRecursion(A, X[0], X[1]);
 
             Respuesta += MostrarResultado(A);
@@ -313,8 +305,6 @@ namespace ProyectoGramaticas
             //crear lista A
             List<List<string>> A = new List<List<string>>();
             obtener(A);
-            
-
             txtRespuesta.Text = Ambiguedad(A);
 
         }
