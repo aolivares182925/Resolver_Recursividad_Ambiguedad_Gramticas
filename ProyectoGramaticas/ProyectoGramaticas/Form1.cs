@@ -113,15 +113,24 @@ namespace ProyectoGramaticas
                 Aa = i.Key.ToString().Split();
                 List<string> S = new List<string> { Aa[0], Aa[1], Aa[0] + "a" };
                 A.Add(S);
-                if (!(NotAmb.ContainsKey(Aa[0])))
-                {
-                    List<string> vacio = new List<string> { Aa[0], "", "" };
-                    //List<string> vacio = new List<string> { Aa[0], "", "" };
-                    A.Add(vacio);
-                }
+                //if (!(NotAmb.ContainsKey(Aa[0])))
+                //{
+                //    List<string> vacio = new List<string> { Aa[0], "vacio", "" };
+                //    //List<string> vacio = new List<string> { Aa[0], "", "" };
+                //    A.Add(vacio);
+                //}
                 foreach (int k in (List<object>)i.Value)
                 {
-                    List<string> Sol = new List<string> { Aa[0] + "a", A[k][2], "" };
+                    List<string> Sol;
+                    if (A[k][2] == "")
+                    {
+                        Sol = new List<string> { Aa[0] + "a", "vacio", "" };
+                    }
+                    else
+                    {
+                        Sol = new List<string> { Aa[0] + "a", A[k][2], "" };
+                    }
+                    
                     A[k] = Sol;
                 }
             }
@@ -231,11 +240,12 @@ namespace ProyectoGramaticas
             string Respuesta = "";
             for (int i=0;i < A.Count;i++ )
             {
-                if (A[i][1] != "")
-                {
-                    Respuesta += "R" + i.ToString() + ": \t" + A[i][0].ToString() + " -> " + A[i][1] + " " + A[i][2] + "\n";
-                }
-                
+                Respuesta += "R" + i.ToString() + ": \t" + A[i][0].ToString() + " -> " + A[i][1] + " " + A[i][2] + "\n";
+                //if (A[i][1] != "")
+                //{
+                //    Respuesta += "R" + i.ToString() + ": \t" + A[i][0].ToString() + " -> " + A[i][1] + " " + A[i][2] + "\n";
+                //}
+
             }
 
             return Respuesta;
