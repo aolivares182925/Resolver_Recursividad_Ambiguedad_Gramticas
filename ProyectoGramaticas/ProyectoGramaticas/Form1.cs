@@ -79,6 +79,25 @@ namespace ProyectoGramaticas
                 A.Add(cadena);
             }
         }
+
+        //obtener todos los simbolos
+        //private void ObtenerSimbolos(List<List<string>> L, List<List<string>> R)
+        //{
+        //    string[] Simbolos = null;
+        //    foreach (List<string> k in R)
+        //    {
+        //        List<string> La = new List<string>();
+        //        foreach (string i in k)
+        //        {
+        //            Simbolos = i.Split(new char[] { ' ' });
+        //            foreach (string j in Simbolos)
+        //            {
+        //                La.Add(j);
+        //            }
+        //        }
+        //        L.Add(La);
+        //    }
+        //}
         #region Ambigüedad
         // --------------------AMBIGÜEDAD------------------------------------
         //funcion de existe ambiguedad
@@ -336,6 +355,243 @@ namespace ProyectoGramaticas
             return Respuesta;
         }
         #endregion funciones_resumidas
+        
+        //-----------------------PRIMEROS Y SIGUIENTES----------------------------------    
+        #region Primeros
+        private void Completar(Dictionary<string, List<string>> CP, List<string> Lista1, List<string> Lista2, string elem)
+        {
+            if (Lista1.Contains(elem))
+            {
+                int ind1 = Lista1.IndexOf(elem);
+                Completar(CP, Lista1, Lista2, Lista2[ind1]);
+
+                if (Lista2.Contains(elem))
+                {
+                    int ind2 = Lista2.IndexOf(elem);
+                    for (int i = 0; i < CP[elem].Count; i++)
+                    {
+                        if (CP.ContainsKey(Lista1[ind2]))
+                        {
+                            if (!CP[Lista1[ind2]].Contains(CP[elem][i]))
+                            {
+                                CP[Lista1[ind2]].Add(CP[elem][i]);
+                            }
+                        }
+                        else
+                        {
+                            List<string> Elem = new List<string>() { CP[elem][i] };
+                            CP.Add(Lista1[ind2], Elem);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                int ind3 = Lista2.IndexOf(elem);
+                for (int i = 0; i < CP[elem].Count; i++)
+                {
+                    if (CP.ContainsKey(Lista1[ind3]))
+                    {
+                        if (!CP[Lista1[ind3]].Contains(CP[elem][i]))
+                        {
+                            CP[Lista1[ind3]].Add(CP[elem][i]);
+                        }
+                    }
+                    else
+                    {
+                        List<string> Elem = new List<string>() { CP[elem][i] };
+                        CP.Add(Lista1[ind3], Elem);
+                    }
+                }
+            }
+        }
+
+        private Dictionary<string, List<string>> ConjuntosPrimerosI(List<List<string>> A)
+        {
+            Dictionary<string, List<string>> ConjPrimeros = new Dictionary<string, List<string>>();
+            //generar lista de no terminales
+            List<string> NT = new List<string>();
+            for (int i = 0; i < A.Count; i++)
+            {
+                NT.Add(A[i][0]);
+            }
+            //recorrer la lista de listas A para: generar las listas paralelas para cuando primero(X)= primero(Y), generar los conjuntos
+            //primeros de todos los terminales Y generar completa y/o parcialmente los conjuntos primeros de algunos NT
+
+            //Listas paralelas con los caminos a seguir
+            List<string> Lista1 = new List<string>();
+            List<string> Lista2 = new List<string>();
+
+            for (int i = 0; i < A.Count; i++)
+            {
+                for (int j = 1; j < A[i].Count; j++)
+                {
+                    if (A[i][j] != "")
+                    {
+                        //si es el primer elemento
+                        if (j == 1)
+                        {
+                            //si el primer elemento es un no terminal
+                            if (NT.Contains(A[i][j]))
+                            {
+                                Lista1.Add(A[i][0]);
+                                Lista2.Add(A[i][j]);
+
+                            }
+                            //si el primer elemento es un terminal
+                            else
+                            {
+                                //Añadir el elem terminal al conjunto de primeros del simb izquierdo que toca
+                                if (ConjPrimeros.ContainsKey(A[i][0]))
+                                {
+                                    ConjPrimeros[A[i][0]].Add(A[i][1]);
+                                }
+                                else
+                                {
+                                    List<string> Elem = new List<string>() { A[i][j] };
+                                    ConjPrimeros.Add(A[i][0], Elem);
+                                }
+                                //Añadir el conjunto primero del terminal, si este no es clave en el diccionario resultado
+                                if ((!ConjPrimeros.ContainsKey(A[i][j])) && (A[i][j] != "vacio"))
+                                {
+                                    List<string> Elem = new List<string>() { A[i][j] };
+                                    ConjPrimeros.Add(A[i][j], Elem);
+                                }
+                            }
+                        }
+                        else  //si es desde el segundo elemento en adelante
+                        {
+                            //si es terminal, no es clave en el diccionario resultado y es diferente de vacio
+                            if ((!NT.Contains(A[i][j])) && (!ConjPrimeros.ContainsKey(A[i][j])) && (A[i][j] != "vacio"))
+                            {
+                                List<string> Elem = new List<string>() { A[i][j] };
+                                ConjPrimeros.Add(A[i][j], Elem);
+                            }
+
+                        }
+                    }
+                }
+            }
+            //completar conjuntos primeros de los NT que cuenten con caminos
+
+            for (int i = 0; i < Lista1.Count; i++)
+            {
+                Completar(ConjPrimeros, Lista1, Lista2, Lista1[i]);
+            }
+            return ConjPrimeros;
+
+        }
+        #endregion Primeros
+
+        #region Siguientes
+        //Parametro 1 L es una lista de listas donde se almacenaran los simbolo
+        //Parametro 2 R es una lista de listas donde esta el resultado de resolver ambiguedad y recursividad
+        private void ObtenerSimbolos(List<List<string>> L, List<List<string>> R)
+        {
+            string[] Simbolos = null;
+            foreach (List<string> k in R)
+            {
+                List<string> La = new List<string>();
+                foreach (string i in k)
+                {
+                    Simbolos = i.Split(new char[] { ' ' });
+                    foreach (string j in Simbolos)
+                    {
+                        La.Add(j);
+                    }
+                }
+                L.Add(La);
+            }
+        }
+
+        //Siguientes
+        private List<string> Siguientes(string C, List<List<string>> L, List<string> N, Dictionary<string, List<string>> S, Dictionary<string, List<string>> P)
+        {
+            if (S.Keys.Contains(C))
+            {
+                return S[C];
+            }
+            else
+            {
+                S.Add(C, new List<string>());
+                if (C == L[0][0])
+                {
+                    S[C].Add("$");
+                }
+                foreach (List<string> k in L)
+                {
+                    int i = k.IndexOf(C);
+                    if (i > 0)
+                    {
+                        if (i == k.Count - 1)
+                        {
+                            if (k[0] == k[i])
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                S[C].AddRange(Siguientes(k[0], L, N, S, P));
+                            }
+                        }
+                        else
+                        {
+                            if (!(N.Contains(k[i + 1])))
+                            {
+                                S[C].Add(k[i + 1]);
+                            }
+                            else
+                            {
+                                if (P[k[i + 1]].Contains("vacio"))
+                                {
+                                    S[C].AddRange(Siguientes(k[0], L, N, S, P));
+                                }
+                                S[C].AddRange(P[k[i + 1]]);
+                                S[C].Remove("vacio");
+                            }
+                        }
+                    }
+                }
+            }
+            return S[C];
+        }
+
+        //Modulo que obtiene en una lista los simbolos no terminales
+        private List<string> FiltrarNT(List<List<string>> L)
+        {
+            List<string> Lista = new List<string>();
+            foreach (List<string> k in L)
+            {
+                foreach (string s in k)
+                {
+                    if (char.IsUpper(s[0]))
+                    {
+                        Lista.Add(s);
+                    }
+                }
+            }
+            return Lista;
+        }
+        #endregion Siguientes
+
+        //tipo puede ser primero o siguiente
+        private string Resultado_dicc (string Tipo,Dictionary<string,List<string>> D)
+        {
+            string R = "";
+
+            foreach (var fila in D)
+            {
+                R += Tipo + "(" + fila.Key.ToString() + ") = { ";
+                string aux = ""; 
+                foreach (string elemento in (List<string>)fila.Value)
+                {
+                    aux += elemento + ", ";
+                }
+                R += "}\n";
+            }
+            return R;
+        }
+
         //BOTONES
 
 
@@ -370,6 +626,81 @@ namespace ProyectoGramaticas
             WindowState = FormWindowState.Minimized;
         }
 
-        
+        private void btnPrimySig_Click(object sender, EventArgs e)
+        {
+            //resolver recursividad y ambigüedad
+            //crear lista A
+            List<List<string>> A = new List<List<string>>();
+            obtener(A);
+            string Rec = Recursividad(A);
+            string Amb = Ambiguedad(A);
+
+            //hallar siguientes
+            //obtener simbolos completos
+            List<List<string>> L = new List<List<string>>();
+            ObtenerSimbolos(L, A);
+
+            //filtrar lo simbolos no terminales
+            List<string> N = FiltrarNT(L);
+            Dictionary<string, List<string>> S = new Dictionary<string, List<string>>();
+            //hallar primeros
+
+            Dictionary<string, List<string>> Primeros = ConjuntosPrimerosI(L);
+            string prim_texto = Resultado_dicc("Primero", Primeros);
+
+
+            foreach (string elemento in N)
+            {
+                List<string> Aux = new List<string>();
+                Aux = Siguientes(elemento, L, N, S, Primeros);
+            }
+            string sig_texto = Resultado_dicc("Siguiente", S);
+
+            string Respuesta_final = Rec + "\n" + Amb + "\n" + prim_texto + "\n" + sig_texto;
+
+            txtRespuesta.Text = Respuesta_final;
+
+            //try
+            //{
+            //    //resolver recursividad y ambigüedad
+            //    //crear lista A
+            //    List<List<string>> A = new List<List<string>>();
+            //    obtener(A);
+            //    string Rec = Recursividad(A);
+            //    string Amb = Ambiguedad(A);
+
+            //    //hallar siguientes
+            //    //obtener simbolos completos
+            //    List<List<string>> L = new List<List<string>>();
+            //    ObtenerSimbolos(L, A);
+
+            //    //filtrar lo simbolos no terminales
+            //    List<string> N = FiltrarNT(L);
+            //    Dictionary<string, List<string>> S = new Dictionary<string, List<string>>();
+            //    //hallar primeros
+                
+            //    Dictionary<string, List<string>> Primeros = ConjuntosPrimerosI(L);
+            //    string prim_texto = Resultado_dicc("Primero", Primeros);
+
+
+            //    foreach (string elemento in N)
+            //    {
+            //        List<string> Aux = new List<string>();
+            //        Aux = Siguientes(elemento, L, N, S, Primeros);
+            //    }
+            //    string sig_texto = Resultado_dicc("Siguiente", S);
+
+            //    string Respuesta_final = Rec + "\n" + Amb + "\n" + prim_texto + "\n" + sig_texto;
+
+            //    txtRespuesta.Text = Respuesta_final;
+
+
+            //}
+            //catch(Exception ex)
+            //{
+            //    string error = ex.Message;
+            //    DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
+            //}
+        }
     }
 }

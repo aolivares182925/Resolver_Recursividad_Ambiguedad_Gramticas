@@ -157,6 +157,7 @@ namespace ProyectoGramaticas
             this.btnPrimySig.Text = "Primeros y Siguientes";
             this.btnPrimySig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrimySig.UseVisualStyleBackColor = true;
+            this.btnPrimySig.Click += new System.EventHandler(this.btnPrimySig_Click);
             // 
             // btnRRecyAmb
             // 
