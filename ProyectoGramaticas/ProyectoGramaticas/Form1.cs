@@ -562,7 +562,11 @@ namespace ProyectoGramaticas
             List<string> Lista = new List<string>();
             foreach (List<string> k in L)
             {
-                Lista.Add(k[0]);
+                if (!(Lista.Contains(k[0])))
+                {
+                    Lista.Add(k[0]);
+                }
+                
                 //foreach (string s in k)
                 //{
                 //    if (char.IsUpper(s[0]))
