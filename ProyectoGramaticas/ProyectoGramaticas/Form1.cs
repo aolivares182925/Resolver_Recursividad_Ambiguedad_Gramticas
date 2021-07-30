@@ -562,13 +562,14 @@ namespace ProyectoGramaticas
             List<string> Lista = new List<string>();
             foreach (List<string> k in L)
             {
-                foreach (string s in k)
-                {
-                    if (char.IsUpper(s[0]))
-                    {
-                        Lista.Add(s);
-                    }
-                }
+                Lista.Add(k[0]);
+                //foreach (string s in k)
+                //{
+                //    if (char.IsUpper(s[0]))
+                //    {
+                //        Lista.Add(s);
+                //    }
+                //}
             }
             return Lista;
         }
@@ -587,7 +588,7 @@ namespace ProyectoGramaticas
                 {
                     aux += elemento + ", ";
                 }
-                R += "}\n";
+                R += aux + "}\n";
             }
             return R;
         }
