@@ -16,7 +16,24 @@ namespace ProyectoGramaticas
         {
             InitializeComponent();
         }
+        #region mover ventana
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
 
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        private void Form1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        
+        #endregion mover ventana
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -62,6 +79,7 @@ namespace ProyectoGramaticas
                 A.Add(cadena);
             }
         }
+        #region Ambigüedad
         // --------------------AMBIGÜEDAD------------------------------------
         //funcion de existe ambiguedad
         private List<Dictionary<object, object>> ExisteAmbiguedad(List<List<string>> A)
@@ -135,7 +153,9 @@ namespace ProyectoGramaticas
                 }
             }
         }
+        #endregion Ambigüedad
 
+        #region Recursion
         //------------------------------RECURSION--------------------------------------
         // Funcion de existe recursion
         private List<Dictionary<string, List<int>>> ExisteRecursion(List<List<string>> A)
@@ -232,7 +252,7 @@ namespace ProyectoGramaticas
                 A.Add(V);
             }
         }
-
+        #endregion Recursion
         // ------------------Funcion para mostrar el resultado ---------------------------------
         private string MostrarResultado(List<List<string>> A)
         {
@@ -251,6 +271,7 @@ namespace ProyectoGramaticas
             return Respuesta;
         }
         //--------------------------AMBIGÜEDAD----------------------------------------------
+        #region funciones_resumidas
         private string Ambiguedad(List<List<string>> A)
         {
             
@@ -314,61 +335,11 @@ namespace ProyectoGramaticas
             Respuesta += MostrarResultado(A);
             return Respuesta;
         }
+        #endregion funciones_resumidas
         //BOTONES
-        private void btnArreglarAmbiguedad_Click(object sender, EventArgs e)
-        {
-            //crear lista A
-            try
-            {
-                List<List<string>> A = new List<List<string>>();
-                obtener(A);
-                txtRespuesta.Text = Ambiguedad(A);
-            }
-            catch (Exception ex)
-            {
-                string error = ex.Message;
-                DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
-            }
-            
 
-        }
 
-        private void btnArreglarRecursividad_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //crear lista A
-                List<List<string>> A = new List<List<string>>();
-                obtener(A);
-                txtRespuesta.Text = Recursividad(A);
-            }
-            catch (Exception ex)
-            {
-                string error = ex.Message;
-                DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error );
-            }
-            
-        }
-
-        private void btnAyR_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //crear lista A
-                List<List<string>> A = new List<List<string>>();
-                obtener(A);
-                string Amb = Ambiguedad(A);
-                string Rec = Recursividad(A);
-                txtRespuesta.Text = Amb + "\n" + Rec;
-            }
-            catch (Exception ex)
-            {
-                string error = ex.Message;
-                DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
-            }
-        }
-
-        private void btnRyA_Click(object sender, EventArgs e)
+        private void btnRRecyAmb_Click(object sender, EventArgs e)
         {
             try
             {
@@ -384,7 +355,21 @@ namespace ProyectoGramaticas
                 string error = ex.Message;
                 DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
             }
-            
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                Application.OpenForms[i].Close();
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        
     }
 }
