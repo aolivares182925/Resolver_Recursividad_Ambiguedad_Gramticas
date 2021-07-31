@@ -523,7 +523,7 @@ namespace ProyectoGramaticas
                 }
                 foreach (List<string> k in L)
                 {
-                    int i = k.IndexOf(C);
+                    int i = k.LastIndexOf(C);
                     if (i > 0)
                     {
                         if (i == k.Count - 1)
