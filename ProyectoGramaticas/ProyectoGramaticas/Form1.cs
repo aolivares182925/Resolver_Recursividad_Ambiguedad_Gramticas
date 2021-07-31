@@ -497,7 +497,10 @@ namespace ProyectoGramaticas
                     Simbolos = i.Split(new char[] { ' ' });
                     foreach (string j in Simbolos)
                     {
-                        La.Add(j);
+                        if(j != "")
+                        {
+                            La.Add(j);
+                        }                       
                     }
                 }
                 L.Add(La);
@@ -569,10 +572,14 @@ namespace ProyectoGramaticas
                 
                 //foreach (string s in k)
                 //{
-                //    if (char.IsUpper(s[0]))
+                //    if(s!="")
                 //    {
-                //        Lista.Add(s);
+                //        if (char.IsUpper(s[0]))
+                //        {
+                //            Lista.Add(s);
+                //        }
                 //    }
+                    
                 //}
             }
             return Lista;
@@ -588,11 +595,12 @@ namespace ProyectoGramaticas
             {
                 R += Tipo + "(" + fila.Key.ToString() + ") = { ";
                 string aux = ""; 
-                foreach (string elemento in (List<string>)fila.Value)
+                foreach (string elemento in (List<string>)new HashSet<string>(fila.Value).ToList())
                 {
                     aux += elemento + ", ";
                 }
-                R += aux + "}\n";
+                aux = aux.Substring(0, aux.Length - 2);
+                R += aux+" " + "}\n";
             }
             return R;
         }
@@ -642,26 +650,36 @@ namespace ProyectoGramaticas
 
             //hallar siguientes
             //obtener simbolos completos
-            List<List<string>> L = new List<List<string>>();
+            List<List<string>> L = new List<List<string>>();      
             ObtenerSimbolos(L, A);
 
             //filtrar lo simbolos no terminales
             List<string> N = FiltrarNT(L);
-            Dictionary<string, List<string>> S = new Dictionary<string, List<string>>();
+           
             //hallar primeros
-
             Dictionary<string, List<string>> Primeros = ConjuntosPrimerosI(L);
+
             string prim_texto = Resultado_dicc("Primero", Primeros);
 
-
+            
+            string texto = "";
             foreach (string elemento in N)
             {
-                List<string> Aux = new List<string>();
-                Aux = Siguientes(elemento, L, N, S, Primeros);
+                Dictionary<string, List<string>> S = new Dictionary<string, List<string>>();
+                texto += "Siguiente(" + elemento+") = { ";
+                List<string> Aux = Siguientes(elemento, L, N, S, Primeros);
+                Aux = new HashSet<string>(Aux).ToList();
+                foreach (var k in Aux)
+                {                   
+                    texto += k + ", ";
+                }
+                texto = texto.Substring(0, texto.Length - 2);
+                texto += " }\n";
             }
-            string sig_texto = Resultado_dicc("Siguiente", S);
 
-            string Respuesta_final = Rec + "\n" + Amb + "\n" + prim_texto + "\n" + sig_texto;
+         
+
+            string Respuesta_final = Rec + "\n" + Amb + "\n" + prim_texto + "\n" + texto;
 
             txtRespuesta.Text = Respuesta_final;
 
