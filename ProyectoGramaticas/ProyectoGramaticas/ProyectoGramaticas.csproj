@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibreriaFunciones\LibreriaFunciones.csproj">
+      <Project>{a8eb1560-b8a8-4daa-b757-5ce158c514ef}</Project>
+      <Name>LibreriaFunciones</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

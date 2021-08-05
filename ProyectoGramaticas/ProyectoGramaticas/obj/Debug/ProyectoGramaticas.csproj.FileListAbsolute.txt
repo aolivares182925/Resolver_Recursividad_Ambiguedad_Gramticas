@@ -28,3 +28,6 @@ C:\Users\Miguel\Documents\GitHub\Resolver_Recursividad_Ambiguedad_Gramticas\Proy
 C:\Users\Miguel\Documents\GitHub\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.csproj.CoreCompileInputs.cache
 C:\Users\Miguel\Documents\GitHub\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.exe
 C:\Users\Miguel\Documents\GitHub\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.pdb
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\bin\Debug\LibreriaFunciones.dll
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\bin\Debug\LibreriaFunciones.pdb
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.csproj.CopyComplete
