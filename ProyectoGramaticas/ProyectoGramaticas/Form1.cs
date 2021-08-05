@@ -486,6 +486,8 @@ namespace ProyectoGramaticas
         #region Siguientes
         //Parametro 1 L es una lista de listas donde se almacenaran los simbolo
         //Parametro 2 R es una lista de listas donde esta el resultado de resolver ambiguedad y recursividad
+
+        
         private void ObtenerSimbolos(List<List<string>> L, List<List<string>> R)
         {
             string[] Simbolos = null;
@@ -559,6 +561,9 @@ namespace ProyectoGramaticas
             return S[C];
         }
 
+         
+        #endregion Siguientes
+
         //Modulo que obtiene en una lista los simbolos no terminales
         private List<string> FiltrarNT(List<List<string>> L)
         {
@@ -570,22 +575,9 @@ namespace ProyectoGramaticas
                     Lista.Add(k[0]);
                 }
                 
-                //foreach (string s in k)
-                //{
-                //    if(s!="")
-                //    {
-                //        if (char.IsUpper(s[0]))
-                //        {
-                //            Lista.Add(s);
-                //        }
-                //    }
-                    
-                //}
             }
             return Lista;
         }
-        #endregion Siguientes
-
         //tipo puede ser primero o siguiente
         private string Resultado_dicc (string Tipo,Dictionary<string,List<string>> D)
         {
@@ -641,89 +633,52 @@ namespace ProyectoGramaticas
 
         private void btnPrimySig_Click(object sender, EventArgs e)
         {
-            //resolver recursividad y ambigüedad
-            //crear lista A
-            List<List<string>> A = new List<List<string>>();
-            obtener(A);
-            string Rec = Recursividad(A);
-            string Amb = Ambiguedad(A);
-
-            //hallar siguientes
-            //obtener simbolos completos
-            List<List<string>> L = new List<List<string>>();      
-            ObtenerSimbolos(L, A);
-
-            //filtrar lo simbolos no terminales
-            List<string> N = FiltrarNT(L);
-           
-            //hallar primeros
-            Dictionary<string, List<string>> Primeros = ConjuntosPrimerosI(L);
-
-            string prim_texto = Resultado_dicc("Primero", Primeros);
-
-            
-            string texto = "";
-            foreach (string elemento in N)
+            try
             {
-                Dictionary<string, List<string>> S = new Dictionary<string, List<string>>();
-                texto += "Siguiente(" + elemento+") = { ";
-                List<string> Aux = Siguientes(elemento, L, N, S, Primeros);
-                Aux = new HashSet<string>(Aux).ToList();
-                foreach (var k in Aux)
-                {                   
-                    texto += k + ", ";
+                 //resolver recursividad y ambigüedad
+                //crear lista A
+                List<List<string>> A = new List<List<string>>();
+                obtener(A);
+                string Rec = Recursividad(A);
+                string Amb = Ambiguedad(A);
+
+                //hallar siguientes
+                //obtener simbolos completos
+                List<List<string>> L = new List<List<string>>();      
+                ObtenerSimbolos(L, A);
+
+                //filtrar lo simbolos no terminales
+                List<string> N = FiltrarNT(L);
+           
+                //hallar primeros
+                Dictionary<string, List<string>> Primeros = ConjuntosPrimerosI(L);
+
+                string prim_texto = Resultado_dicc("Primero", Primeros);
+
+                //hallar siguientes
+                Dictionary<string, List<string>> Sig = new Dictionary<string, List<string>>();
+                
+                foreach (string elemento in N)
+                {
+                    Dictionary<string, List<string>> S = new Dictionary<string, List<string>>();
+                    List<string> Aux = Siguientes(elemento, L, N, S, Primeros);
+                    Aux = new HashSet<string>(Aux).ToList();
+                    Sig.Add(elemento, Aux);
                 }
-                texto = texto.Substring(0, texto.Length - 2);
-                texto += " }\n";
+
+                string sig_texto = Resultado_dicc("Siguiente", Sig);
+
+
+                string Respuesta_final = Rec + "\n" + Amb + "\n" + prim_texto + "\n" + sig_texto;
+
+                txtRespuesta.Text = Respuesta_final;
+            }
+            catch(Exception ex)
+            {
+                string error = ex.Message;
+                DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
             }
 
-         
-
-            string Respuesta_final = Rec + "\n" + Amb + "\n" + prim_texto + "\n" + texto;
-
-            txtRespuesta.Text = Respuesta_final;
-
-            //try
-            //{
-            //    //resolver recursividad y ambigüedad
-            //    //crear lista A
-            //    List<List<string>> A = new List<List<string>>();
-            //    obtener(A);
-            //    string Rec = Recursividad(A);
-            //    string Amb = Ambiguedad(A);
-
-            //    //hallar siguientes
-            //    //obtener simbolos completos
-            //    List<List<string>> L = new List<List<string>>();
-            //    ObtenerSimbolos(L, A);
-
-            //    //filtrar lo simbolos no terminales
-            //    List<string> N = FiltrarNT(L);
-            //    Dictionary<string, List<string>> S = new Dictionary<string, List<string>>();
-            //    //hallar primeros
-                
-            //    Dictionary<string, List<string>> Primeros = ConjuntosPrimerosI(L);
-            //    string prim_texto = Resultado_dicc("Primero", Primeros);
-
-
-            //    foreach (string elemento in N)
-            //    {
-            //        List<string> Aux = new List<string>();
-            //        Aux = Siguientes(elemento, L, N, S, Primeros);
-            //    }
-            //    string sig_texto = Resultado_dicc("Siguiente", S);
-
-            //    string Respuesta_final = Rec + "\n" + Amb + "\n" + prim_texto + "\n" + sig_texto;
-
-            //    txtRespuesta.Text = Respuesta_final;
-
-
-            //}
-            //catch(Exception ex)
-            //{
-            //    string error = ex.Message;
-            //    DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
-            //}
         }
     }
 }
