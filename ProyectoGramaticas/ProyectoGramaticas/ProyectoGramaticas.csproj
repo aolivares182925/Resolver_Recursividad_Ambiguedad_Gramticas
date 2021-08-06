@@ -46,16 +46,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormAmbRec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormAmbRec.Designer.cs">
+      <DependentUpon>FormAmbRec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrimSig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrimSig.Designer.cs">
+      <DependentUpon>FormPrimSig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTablaAnalisisS_LL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTablaAnalisisS_LL.Designer.cs">
+      <DependentUpon>FormTablaAnalisisS_LL.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTablaAnalisisS_LL.resx">
+      <DependentUpon>FormTablaAnalisisS_LL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

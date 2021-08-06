@@ -11,11 +11,11 @@ using LibreriaFunciones;
 
 namespace ProyectoGramaticas
 {
-    public partial class Form1 : Form
+    public partial class FormPrincipal : Form
     {
         //Metodos necesarios 
         Metodos M = new Metodos();
-        public Form1()
+        public FormPrincipal()
         {
             InitializeComponent();
         }

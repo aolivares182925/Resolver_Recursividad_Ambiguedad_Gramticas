@@ -1,7 +1,7 @@
 ﻿
 namespace ProyectoGramaticas
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@ namespace ProyectoGramaticas
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panelprograma1 = new System.Windows.Forms.Panel();
             this.panelPrograma = new System.Windows.Forms.Panel();
             this.txtRespuesta = new System.Windows.Forms.RichTextBox();
