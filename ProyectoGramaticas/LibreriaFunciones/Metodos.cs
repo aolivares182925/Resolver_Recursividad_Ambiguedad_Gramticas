@@ -493,6 +493,24 @@ namespace LibreriaFunciones
             }
             return Lista;
         }
+
+        //Modulo que obtiene en una lista los simbolo terminales
+        public List<string> FiltrarT(List<List<string>> L, List<string> NT)
+        {
+            List<string> T = new List<string>();
+            foreach (List<string> k in L)
+            {
+                foreach (string s in k)
+                {
+                    if (!NT.Contains(s))
+                    {
+                        T.Add(s);
+                    }
+                }
+            }
+            return T;
+        }
+
         //tipo puede ser primero o siguiente
         public string Resultado_dicc(string Tipo, Dictionary<string, List<string>> D)
         {
