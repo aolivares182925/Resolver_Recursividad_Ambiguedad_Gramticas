@@ -60,6 +60,7 @@ namespace ProyectoGramaticas
             this.panelprograma1.Name = "panelprograma1";
             this.panelprograma1.Size = new System.Drawing.Size(1000, 616);
             this.panelprograma1.TabIndex = 1;
+            this.panelprograma1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelprograma1_Paint);
             // 
             // panelPrograma
             // 
@@ -210,7 +211,7 @@ namespace ProyectoGramaticas
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // Form1
+            // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,7 +225,7 @@ namespace ProyectoGramaticas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(1200, 700);
             this.MinimumSize = new System.Drawing.Size(1200, 700);
-            this.Name = "Form1";
+            this.Name = "FormPrincipal";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown_1);

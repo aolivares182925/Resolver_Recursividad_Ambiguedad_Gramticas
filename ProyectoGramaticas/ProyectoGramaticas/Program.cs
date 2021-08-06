@@ -16,7 +16,7 @@ namespace ProyectoGramaticas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTablaAnalisisS_LL());
+            Application.Run(new FormPrincipal());
         }
     }
 }

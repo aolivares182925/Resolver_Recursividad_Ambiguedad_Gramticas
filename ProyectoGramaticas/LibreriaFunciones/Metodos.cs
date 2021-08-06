@@ -437,37 +437,39 @@ namespace LibreriaFunciones
                 }
                 foreach (List<string> k in L)
                 {
-                    int i = k.LastIndexOf(C);
-                    if (i > 0)
+                    for (int i = 1; i <= k.Count()-1; i++)
                     {
-                        if (i == k.Count - 1)
+                        if (k[i] == C)
                         {
-                            if (k[0] == k[i])
+                            if (i == k.Count - 1)
                             {
-                                continue;
-                            }
-                            else
-                            {
-                                S[C].AddRange(Siguientes(k[0], L, N, S, P));
-                            }
-                        }
-                        else
-                        {
-                            if (!(N.Contains(k[i + 1])))
-                            {
-                                S[C].Add(k[i + 1]);
-                            }
-                            else
-                            {
-                                if (P[k[i + 1]].Contains("vacio"))
+                                if (k[0] == k[i])
+                                {
+                                    continue;
+                                }
+                                else
                                 {
                                     S[C].AddRange(Siguientes(k[0], L, N, S, P));
                                 }
-                                S[C].AddRange(P[k[i + 1]]);
-                                S[C].Remove("vacio");
+                            }
+                            else
+                            {
+                                if (!(N.Contains(k[i + 1])))
+                                {
+                                    S[C].Add(k[i + 1]);
+                                }
+                                else
+                                {
+                                    if (P[k[i + 1]].Contains("vacio"))
+                                    {
+                                        S[C].AddRange(Siguientes(k[0], L, N, S, P));
+                                    }
+                                    S[C].AddRange(P[k[i + 1]]);
+                                    S[C].Remove("vacio");
+                                }
                             }
                         }
-                    }
+                    }                                                            
                 }
             }
             return S[C];
