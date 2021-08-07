@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibreriaFunciones;
 
 namespace ProyectoGramaticas
 {
     public partial class FormTablaAnalisisS_LL : Form
     {
+        //Metodos necesarios 
+        Metodos M = new Metodos();
         public FormTablaAnalisisS_LL()
         {
             InitializeComponent();
@@ -22,7 +25,9 @@ namespace ProyectoGramaticas
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void btnResolver_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("Codigo");
@@ -41,6 +46,8 @@ namespace ProyectoGramaticas
 
             DGV1.DataSource = dt;
             DGV1.Update();
+
+            txtRespuesta.Text = "Hola";
         }
     }
 }

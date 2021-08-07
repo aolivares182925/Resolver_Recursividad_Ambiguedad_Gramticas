@@ -15,6 +15,8 @@ namespace ProyectoGramaticas
     {
         //Metodos necesarios 
         Metodos M = new Metodos();
+
+        private Form activeForm = null;
         public FormPrincipal()
         {
             InitializeComponent();
@@ -35,72 +37,37 @@ namespace ProyectoGramaticas
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-        
+
         #endregion mover ventana
-        private void label3_Click(object sender, EventArgs e)
+
+        //Funciones extra
+        private void openChildForm(Form ChildForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+
+            activeForm = ChildForm;
+
+            ChildForm.TopLevel = false;
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+            panelContenedor.Controls.Add(ChildForm);
+            panelContenedor.Tag = ChildForm;
+            ChildForm.BringToFront();
+            ChildForm.Show();
+        }
+
+        private void resetColors()
         {
 
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-        //obtener las reglas del txt
-        private void obtener(List<List<string>> A)
-        {
-            //dividir en lineas
-            string[] Campos = null;
-            Campos = txtReglas.Text.Split(new char[] { '\n' });
-            //campos = {{"regla 1"},{"regla 2"}...}
-            //oredenar
-            //Array.Sort(Campos);
-            //numero de reglas
-            int n = Campos.Length;
-            //crear lista de reglas(listas)
-            //List<List<string>> A = new List<List<string>>();
-            //añadir a listas
-
-            for (int i=0; i < n;i++)
-            {
-                List<string> cadena = new List<string>();
-                string[] aux = null;
-                aux = Campos[i].Split(' '); //aux = {"A","=","E","+"..}
-                cadena.Add(aux[0]);
-                cadena.Add(aux[2]);
-
-                string resto = "";
-                
-                for(int j=3;j < aux.Length;j++)
-                {
-                    if (j == aux.Length - 1)
-                        resto += aux[j];
-                    else
-                        resto += aux[j] + " ";
-                }
-                cadena.Add(resto);
-                A.Add(cadena);
-            }
-        }
-
-        //BOTONES
-
         private void btnRRecyAmb_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //crear lista A
-                List<List<string>> A = new List<List<string>>();
-                obtener(A);
-                string Rec = M.Recursividad(A);
-                string Amb = M.Ambiguedad(A);
-                txtRespuesta.Text = Rec + "\n" + Amb;
-            }
-            catch (Exception ex)
-            {
-                string error = ex.Message;
-                DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
-            }
+            openChildForm(new FormAmbRec());
+            btnRRecyAmb.BackColor = Color.FromArgb(32, 30, 45);
+            btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
+            btnTablaAnalisis.BackColor = Color.FromArgb(11, 7, 17);
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -118,57 +85,25 @@ namespace ProyectoGramaticas
 
         private void btnPrimySig_Click(object sender, EventArgs e)
         {
-            try
-            {
-                 //resolver recursividad y ambigüedad
-                //crear lista A
-                List<List<string>> A = new List<List<string>>();
-                obtener(A);
-                string Rec = M.Recursividad(A);
-                string Amb = M.Ambiguedad(A);
+            openChildForm(new FormPrimSig());
+            btnPrimySig.BackColor = Color.FromArgb(32, 30, 45);
+            btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
+            btnTablaAnalisis.BackColor = Color.FromArgb(11, 7, 17);
 
-                //hallar siguientes
-                //obtener simbolos completos
-                List<List<string>> L = new List<List<string>>();      
-                M.ObtenerSimbolos(L, A);
-
-                //filtrar lo simbolos no terminales
-                List<string> N = M.FiltrarNT(L);
-           
-                //hallar primeros
-                Dictionary<string, List<string>> Primeros = M.ConjuntosPrimerosI(L);
-
-                string prim_texto = M.Resultado_dicc("Primero", Primeros);
-
-                //hallar siguientes
-                Dictionary<string, List<string>> Sig = new Dictionary<string, List<string>>();
-                
-                foreach (string elemento in N)
-                {
-                    Dictionary<string, List<string>> S = new Dictionary<string, List<string>>();
-                    List<string> Aux = M.Siguientes(elemento, L, N, S, Primeros);
-                    Aux = new HashSet<string>(Aux).ToList();
-                    Sig.Add(elemento, Aux);
-                }
-
-                string sig_texto = M.Resultado_dicc("Siguiente", Sig);
-
-
-                string Respuesta_final = Rec + "\n" + Amb + "\n" + prim_texto + "\n" + sig_texto;
-
-                txtRespuesta.Text = Respuesta_final;
-            }
-            catch(Exception ex)
-            {
-                string error = ex.Message;
-                DialogResult result = MessageBox.Show("ERROR AL INGRESAR LAS REGLAS \n " + error);
-            }
 
         }
 
         private void panelprograma1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnTablaAnalisis_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormTablaAnalisisS_LL());
+            btnTablaAnalisis.BackColor = Color.FromArgb(32, 30, 45);
+            btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
+            btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
         }
     }
 }
