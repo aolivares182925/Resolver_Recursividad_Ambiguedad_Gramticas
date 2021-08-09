@@ -70,6 +70,12 @@
     <Compile Include="FormTablaAnalisisS_LL.Designer.cs">
       <DependentUpon>FormTablaAnalisisS_LL.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVisualiarDGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisualiarDGV.Designer.cs">
+      <DependentUpon>FormVisualiarDGV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAmbRec.resx">
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTablaAnalisisS_LL.resx">
       <DependentUpon>FormTablaAnalisisS_LL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisualiarDGV.resx">
+      <DependentUpon>FormVisualiarDGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

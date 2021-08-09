@@ -72,10 +72,11 @@ namespace ProyectoGramaticas
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
-            {
-                Application.OpenForms[i].Close();
-            }
+            this.Close();
+            //for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            //{
+            //    Application.OpenForms[i].Close();
+            //}
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

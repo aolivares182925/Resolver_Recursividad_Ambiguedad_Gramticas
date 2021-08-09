@@ -38,3 +38,4 @@ C:\Users\Miguel\Documents\GitHub\Resolver_Recursividad_Ambiguedad_Gramticas\Proy
 C:\Users\Miguel\Documents\GitHub\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.csproj.CopyComplete
 E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.FormAmbRec.resources
 E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.FormPrimSig.resources
+E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.FormVisualiarDGV.resources
