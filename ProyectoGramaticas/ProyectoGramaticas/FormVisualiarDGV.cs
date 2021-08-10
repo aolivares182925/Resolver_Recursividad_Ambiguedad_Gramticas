@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LibreriaFunciones;
 namespace ProyectoGramaticas
 {
     public partial class FormVisualiarDGV : Form
     {
-        public DataTable DatosTabla = new DataTable();
+        Metodos M = new Metodos();
         public FormVisualiarDGV()
         {
             InitializeComponent();
+
         }
 
         
@@ -31,8 +32,9 @@ namespace ProyectoGramaticas
 
         private void FormVisualiarDGV_Load(object sender, EventArgs e)
         {
-            DGV1.DataSource = DatosTabla;
-            DGV1.Update();
+
+            
+
         }
 
         #region mover ventana
@@ -61,9 +63,13 @@ namespace ProyectoGramaticas
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+
         #endregion mover ventana
 
+        private void DGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-        
+        }
     }
 }

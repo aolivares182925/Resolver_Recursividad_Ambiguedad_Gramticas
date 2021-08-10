@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LibreriaFunciones
 {
@@ -489,8 +490,8 @@ namespace LibreriaFunciones
                 {
                     Lista.Add(k[0]);
                 }
-
             }
+            Lista = new HashSet<string>(Lista).ToList();
             return Lista;
         }
 
@@ -502,12 +503,13 @@ namespace LibreriaFunciones
             {
                 foreach (string s in k)
                 {
-                    if (!NT.Contains(s))
+                    if ((!NT.Contains(s)) && (s != "vacio"))
                     {
                         T.Add(s);
                     }
                 }
             }
+            T = new HashSet<string>(T).ToList();
             return T;
         }
 
@@ -530,7 +532,122 @@ namespace LibreriaFunciones
             return R;
         }
 
-        
+        //Modulo para recuperar la regla necesaria en la tabla
+        public static List<string> ReglaGeneradora(List<List<string>> A, Dictionary<string,
+            List<string>> ConjPrimeros, List<string> ListNT, string NT, string Simb)
+        {
+            for (int i = 0; i < A.Count; i++)
+            {
+                if (NT == A[i][0])
+                {
+                    if (ListNT.Contains(A[i][1]))
+                    {
+                        if (ConjPrimeros[A[i][1]].Contains(Simb))
+                        {
+                            return A[i];
+                        }
 
+                    }
+                    else
+                    {
+                        if (A[i][1] == Simb)
+                        {
+                            return A[i];
+                        }
+
+                    }
+                }
+
+            }
+            return new List<string> { };
+        }
+
+        //Modulo para llenar la tabla sintactica con los valores necesarios
+        public void TablaSintactica(DataGridView DGV, List<List<string>> L,
+            Dictionary<string, List<string>> P, List<string> T, List<string> NT)
+        {
+
+            int cont = 0;
+            string elem;
+            while (cont <= NT.Count() - 1)
+            {
+
+                string NoTer = DGV.Rows[cont].Cells[0].Value.ToString();
+                for (int i = 1; i <= T.Count; i++)
+                {
+                    string Ter = DGV.Columns[i].HeaderText;
+
+                    if (!P[NoTer].Contains(Ter) && Ter != "$")
+                    {
+                        continue;
+                    }
+
+                    else
+                    {
+                        List<string> fila = ReglaGeneradora(L, P, NT, NoTer, Ter);
+                        elem = ConvertLtoS(fila);
+                        DGV.Rows[cont].Cells[i].Value = elem;
+                    }
+                }
+                if (P[NoTer].Contains("vacio"))
+                {
+                    Dictionary<string, List<string>> S = new Dictionary<string, List<string>>();
+                    List<string> Sig = Siguientes(NoTer, L, NT, S, P);
+                    for (int i = 0; i < Sig.Count; i++)
+                    {
+                        string valor = Sig[i];
+                        int index = SearchIndex(DGV, valor);
+                        if (DGV.Rows[cont].Cells[index].Value.ToString() == "error" || valor == "$")
+                        {
+                            elem = NoTer + " = vacio";
+                            DGV.Rows[cont].Cells[index].Value = elem;
+                        }
+                    }
+                }
+                cont++;
+            }
+        }
+
+        //Modulo para convertir una lista a string(regla)
+        public static string ConvertLtoS(List<string> L)
+        {
+            string r = "";
+            bool F = true;
+            if (L.Count > 0)
+            {
+                foreach (string k in L)
+                {
+                    if (F)
+                    {
+                        r += k + "=";
+                        F = false;
+                    }
+                    else
+                    {
+                        r += k;
+                    }
+                }
+                return r;
+            }
+            else
+            {
+                return "error";
+            }
+        }
+
+        //Modulo para recuperar el indice de una columna
+        static int SearchIndex(DataGridView DGV, string elem)
+        {
+            int ind = -1;
+            for (int i = 0; i < DGV.Columns.Count; i++)
+            {
+                if (DGV.Columns[i].HeaderText == elem)
+                {
+                    ind = i;
+                    break;
+                }
+            }
+            return ind;
+        }
     }
 }

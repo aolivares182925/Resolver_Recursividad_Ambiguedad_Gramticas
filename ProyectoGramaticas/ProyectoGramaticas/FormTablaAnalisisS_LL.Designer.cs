@@ -29,20 +29,20 @@ namespace ProyectoGramaticas
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTablaAnalisisS_LL));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTablaAnalisisS_LL));
             this.panelPrograma = new System.Windows.Forms.Panel();
-            this.txtRespuesta = new System.Windows.Forms.TextBox();
+            this.btnExpandirDGV = new System.Windows.Forms.Button();
             this.DGV1 = new System.Windows.Forms.DataGridView();
-            this.txtReglas = new System.Windows.Forms.TextBox();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.btnResolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnExpandirDGV = new System.Windows.Forms.Button();
+            this.txtReglas = new System.Windows.Forms.RichTextBox();
+            this.txtRespuesta = new System.Windows.Forms.RichTextBox();
             this.panelPrograma.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.panelTitulo.SuspendLayout();
@@ -51,32 +51,35 @@ namespace ProyectoGramaticas
             // panelPrograma
             // 
             this.panelPrograma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panelPrograma.Controls.Add(this.btnExpandirDGV);
             this.panelPrograma.Controls.Add(this.txtRespuesta);
-            this.panelPrograma.Controls.Add(this.DGV1);
             this.panelPrograma.Controls.Add(this.txtReglas);
+            this.panelPrograma.Controls.Add(this.btnExpandirDGV);
+            this.panelPrograma.Controls.Add(this.DGV1);
             this.panelPrograma.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrograma.Location = new System.Drawing.Point(0, 172);
             this.panelPrograma.Name = "panelPrograma";
             this.panelPrograma.Size = new System.Drawing.Size(1300, 628);
             this.panelPrograma.TabIndex = 5;
             // 
-            // txtRespuesta
+            // btnExpandirDGV
             // 
-            this.txtRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.txtRespuesta.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRespuesta.ForeColor = System.Drawing.Color.White;
-            this.txtRespuesta.Location = new System.Drawing.Point(490, 347);
-            this.txtRespuesta.Multiline = true;
-            this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.ReadOnly = true;
-            this.txtRespuesta.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtRespuesta.Size = new System.Drawing.Size(798, 269);
-            this.txtRespuesta.TabIndex = 2;
-            this.txtRespuesta.Text = "El resultado se mostrara aqui";
+            this.btnExpandirDGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnExpandirDGV.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExpandirDGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExpandirDGV.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExpandirDGV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
+            this.btnExpandirDGV.Image = ((System.Drawing.Image)(resources.GetObject("btnExpandirDGV.Image")));
+            this.btnExpandirDGV.Location = new System.Drawing.Point(1248, 15);
+            this.btnExpandirDGV.Name = "btnExpandirDGV";
+            this.btnExpandirDGV.Size = new System.Drawing.Size(40, 40);
+            this.btnExpandirDGV.TabIndex = 13;
+            this.btnExpandirDGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExpandirDGV.UseVisualStyleBackColor = false;
+            this.btnExpandirDGV.Click += new System.EventHandler(this.btnExpandirDGV_Click);
             // 
             // DGV1
             // 
+            this.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
@@ -109,20 +112,8 @@ namespace ProyectoGramaticas
             this.DGV1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV1.RowHeadersWidth = 51;
             this.DGV1.RowTemplate.Height = 24;
-            this.DGV1.Size = new System.Drawing.Size(798, 326);
+            this.DGV1.Size = new System.Drawing.Size(798, 265);
             this.DGV1.TabIndex = 1;
-            // 
-            // txtReglas
-            // 
-            this.txtReglas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.txtReglas.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReglas.ForeColor = System.Drawing.Color.White;
-            this.txtReglas.Location = new System.Drawing.Point(12, 6);
-            this.txtReglas.Multiline = true;
-            this.txtReglas.Name = "txtReglas";
-            this.txtReglas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtReglas.Size = new System.Drawing.Size(462, 610);
-            this.txtReglas.TabIndex = 0;
             // 
             // panelTitulo
             // 
@@ -136,6 +127,7 @@ namespace ProyectoGramaticas
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(1300, 172);
             this.panelTitulo.TabIndex = 4;
+            this.panelTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTitulo_Paint);
             // 
             // btnResolver
             // 
@@ -186,21 +178,27 @@ namespace ProyectoGramaticas
             this.label2.TabIndex = 9;
             this.label2.Text = "Solo se ingresa una regla por linea\r\nDebe de tener el sgt. formato: A -> b * i";
             // 
-            // btnExpandirDGV
+            // txtReglas
             // 
-            this.btnExpandirDGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnExpandirDGV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExpandirDGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpandirDGV.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExpandirDGV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
-            this.btnExpandirDGV.Image = ((System.Drawing.Image)(resources.GetObject("btnExpandirDGV.Image")));
-            this.btnExpandirDGV.Location = new System.Drawing.Point(1248, 15);
-            this.btnExpandirDGV.Name = "btnExpandirDGV";
-            this.btnExpandirDGV.Size = new System.Drawing.Size(40, 40);
-            this.btnExpandirDGV.TabIndex = 13;
-            this.btnExpandirDGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExpandirDGV.UseVisualStyleBackColor = false;
-            this.btnExpandirDGV.Click += new System.EventHandler(this.btnExpandirDGV_Click);
+            this.txtReglas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.txtReglas.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReglas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtReglas.Location = new System.Drawing.Point(12, 15);
+            this.txtReglas.Name = "txtReglas";
+            this.txtReglas.Size = new System.Drawing.Size(462, 591);
+            this.txtReglas.TabIndex = 14;
+            this.txtReglas.Text = "";
+            // 
+            // txtRespuesta
+            // 
+            this.txtRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.txtRespuesta.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRespuesta.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtRespuesta.Location = new System.Drawing.Point(490, 286);
+            this.txtRespuesta.Name = "txtRespuesta";
+            this.txtRespuesta.Size = new System.Drawing.Size(798, 320);
+            this.txtRespuesta.TabIndex = 15;
+            this.txtRespuesta.Text = "";
             // 
             // FormTablaAnalisisS_LL
             // 
@@ -214,7 +212,6 @@ namespace ProyectoGramaticas
             this.Text = "FormTablaAnalisisS_LL";
             this.Load += new System.EventHandler(this.FormTablaAnalisisS_LL_Load);
             this.panelPrograma.ResumeLayout(false);
-            this.panelPrograma.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
@@ -225,14 +222,14 @@ namespace ProyectoGramaticas
         #endregion
 
         private System.Windows.Forms.Panel panelPrograma;
-        private System.Windows.Forms.TextBox txtReglas;
         private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Button btnResolver;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView DGV1;
-        private System.Windows.Forms.TextBox txtRespuesta;
         private System.Windows.Forms.Button btnExpandirDGV;
+        private System.Windows.Forms.RichTextBox txtReglas;
+        private System.Windows.Forms.RichTextBox txtRespuesta;
     }
 }
