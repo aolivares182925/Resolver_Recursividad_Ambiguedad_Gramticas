@@ -571,7 +571,6 @@ namespace LibreriaFunciones
             string elem;
             while (cont <= NT.Count() - 1)
             {
-
                 string NoTer = DGV.Rows[cont].Cells[0].Value.ToString();
                 for (int i = 1; i <= T.Count; i++)
                 {
@@ -581,7 +580,6 @@ namespace LibreriaFunciones
                     {
                         continue;
                     }
-
                     else
                     {
                         List<string> fila = ReglaGeneradora(L, P, NT, NoTer, Ter);
@@ -599,7 +597,7 @@ namespace LibreriaFunciones
                         int index = SearchIndex(DGV, valor);
                         if (DGV.Rows[cont].Cells[index].Value.ToString() == "error" || valor == "$")
                         {
-                            elem = NoTer + " = vacio";
+                            elem = NoTer + " -> vacio";
                             DGV.Rows[cont].Cells[index].Value = elem;
                         }
                     }
@@ -619,7 +617,7 @@ namespace LibreriaFunciones
                 {
                     if (F)
                     {
-                        r += k + "=";
+                        r += k + "->";
                         F = false;
                     }
                     else

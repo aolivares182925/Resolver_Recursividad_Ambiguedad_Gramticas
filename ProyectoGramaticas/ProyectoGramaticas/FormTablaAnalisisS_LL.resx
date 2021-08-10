@@ -117,15 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnExpandirDGV.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAARFJREFUSEvt
-        llEOgjAQRLmERu9/EjERQb/0w+PgDJ2SQrvSyie8ZNO1O9ulpa1UO9uj7/sGluIqiQk1ThrRSGIjYYpa
-        EhNorMK9JDbSeT6ws0LZIOcAe3EAj0I20pF30B4VXoRa5RDfFhUOnzpr5tDMc07OLSgsP7s4YlFR9Q8M
-        ol9Aww0ybiT44dJ16o5A7OEk01cDfzJeERwI9oSZx4IxabL3w87OBuERgd1gF3VFIFbD/j9OSGxh43nl
-        QDB/gbTqjkCsc5LoApmMZ8JMIj95DaZALHm9up/r/iTMoh5oouLOLSvsl3eydEtQqxzi26LCJGumc5AT
-        znxAIRvpUqz55soqzF2YYs03112Snc1QVV9oJNOO0jXDyQAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

@@ -29,20 +29,18 @@ namespace ProyectoGramaticas
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTablaAnalisisS_LL));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelPrograma = new System.Windows.Forms.Panel();
-            this.btnExpandirDGV = new System.Windows.Forms.Button();
+            this.txtRespuesta = new System.Windows.Forms.RichTextBox();
+            this.txtReglas = new System.Windows.Forms.RichTextBox();
             this.DGV1 = new System.Windows.Forms.DataGridView();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.btnResolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtReglas = new System.Windows.Forms.RichTextBox();
-            this.txtRespuesta = new System.Windows.Forms.RichTextBox();
             this.panelPrograma.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.panelTitulo.SuspendLayout();
@@ -53,7 +51,6 @@ namespace ProyectoGramaticas
             this.panelPrograma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.panelPrograma.Controls.Add(this.txtRespuesta);
             this.panelPrograma.Controls.Add(this.txtReglas);
-            this.panelPrograma.Controls.Add(this.btnExpandirDGV);
             this.panelPrograma.Controls.Add(this.DGV1);
             this.panelPrograma.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrograma.Location = new System.Drawing.Point(0, 172);
@@ -61,58 +58,65 @@ namespace ProyectoGramaticas
             this.panelPrograma.Size = new System.Drawing.Size(1300, 628);
             this.panelPrograma.TabIndex = 5;
             // 
-            // btnExpandirDGV
+            // txtRespuesta
             // 
-            this.btnExpandirDGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnExpandirDGV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExpandirDGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpandirDGV.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExpandirDGV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
-            this.btnExpandirDGV.Image = ((System.Drawing.Image)(resources.GetObject("btnExpandirDGV.Image")));
-            this.btnExpandirDGV.Location = new System.Drawing.Point(1248, 15);
-            this.btnExpandirDGV.Name = "btnExpandirDGV";
-            this.btnExpandirDGV.Size = new System.Drawing.Size(40, 40);
-            this.btnExpandirDGV.TabIndex = 13;
-            this.btnExpandirDGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExpandirDGV.UseVisualStyleBackColor = false;
-            this.btnExpandirDGV.Click += new System.EventHandler(this.btnExpandirDGV_Click);
+            this.txtRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.txtRespuesta.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRespuesta.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtRespuesta.Location = new System.Drawing.Point(663, 15);
+            this.txtRespuesta.Name = "txtRespuesta";
+            this.txtRespuesta.Size = new System.Drawing.Size(625, 265);
+            this.txtRespuesta.TabIndex = 15;
+            this.txtRespuesta.Text = "El resultado se mostrara aqui";
+            // 
+            // txtReglas
+            // 
+            this.txtReglas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.txtReglas.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReglas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtReglas.Location = new System.Drawing.Point(12, 15);
+            this.txtReglas.Name = "txtReglas";
+            this.txtReglas.Size = new System.Drawing.Size(645, 265);
+            this.txtReglas.TabIndex = 14;
+            this.txtReglas.Text = "";
             // 
             // DGV1
             // 
             this.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV1.DefaultCellStyle = dataGridViewCellStyle5;
             this.DGV1.EnableHeadersVisualStyles = false;
             this.DGV1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.DGV1.Location = new System.Drawing.Point(490, 15);
+            this.DGV1.Location = new System.Drawing.Point(12, 286);
             this.DGV1.Name = "DGV1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DGV1.RowHeadersWidth = 51;
             this.DGV1.RowTemplate.Height = 24;
-            this.DGV1.Size = new System.Drawing.Size(798, 265);
+            this.DGV1.Size = new System.Drawing.Size(1276, 330);
             this.DGV1.TabIndex = 1;
             // 
             // panelTitulo
@@ -178,28 +182,6 @@ namespace ProyectoGramaticas
             this.label2.TabIndex = 9;
             this.label2.Text = "Solo se ingresa una regla por linea\r\nDebe de tener el sgt. formato: A -> b * i";
             // 
-            // txtReglas
-            // 
-            this.txtReglas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.txtReglas.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReglas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtReglas.Location = new System.Drawing.Point(12, 15);
-            this.txtReglas.Name = "txtReglas";
-            this.txtReglas.Size = new System.Drawing.Size(462, 591);
-            this.txtReglas.TabIndex = 14;
-            this.txtReglas.Text = "";
-            // 
-            // txtRespuesta
-            // 
-            this.txtRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.txtRespuesta.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRespuesta.ForeColor = System.Drawing.Color.Gainsboro;
-            this.txtRespuesta.Location = new System.Drawing.Point(490, 286);
-            this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(798, 320);
-            this.txtRespuesta.TabIndex = 15;
-            this.txtRespuesta.Text = "";
-            // 
             // FormTablaAnalisisS_LL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -228,7 +210,6 @@ namespace ProyectoGramaticas
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView DGV1;
-        private System.Windows.Forms.Button btnExpandirDGV;
         private System.Windows.Forms.RichTextBox txtReglas;
         private System.Windows.Forms.RichTextBox txtRespuesta;
     }

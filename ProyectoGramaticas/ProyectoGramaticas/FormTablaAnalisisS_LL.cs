@@ -70,6 +70,9 @@ namespace ProyectoGramaticas
             {
                 //resolver recursividad y ambigüedad
                 //crear lista A
+                DGV1.Rows.Clear();
+                DGV1.Columns.Clear();
+                txtRespuesta.Text = ""; 
                 List<List<string>> A = new List<List<string>>();
                 obtener(A);
                 string Rec = M.Recursividad(A);
@@ -84,15 +87,18 @@ namespace ProyectoGramaticas
                 List<string> NT = M.FiltrarNT(L);
                 List<string> T = M.FiltrarT(L, NT);
 
-
+                //llenar data grid view
                 Dictionary<string, List<string>> P = M.ConjuntosPrimerosI(L);
                 DGV1.Columns.Add("nada", "");
+
+                
                 for (int i = 0; i < T.Count; i++)
                 {
                     DGV1.Columns.Add("columna1", T[i]);
                 }
                 DGV1.Columns.Add("columna1", "$");
 
+                
 
                 foreach (string k in NT)
                 {
@@ -107,7 +113,6 @@ namespace ProyectoGramaticas
 
                 }
                 M.TablaSintactica(DGV1, L, P, T, NT);
-
 
 
                 string prim_texto = M.Resultado_dicc("Primero", P);
@@ -144,18 +149,11 @@ namespace ProyectoGramaticas
 
         private void FormTablaAnalisisS_LL_Load(object sender, EventArgs e)
         {
-            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
-            ToolTip1.SetToolTip(this.btnExpandirDGV, "Expandir tabla");
+            //System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            //ToolTip1.SetToolTip(this.btnExpandirDGV, "Expandir tabla");
         }
 
-        private void btnExpandirDGV_Click(object sender, EventArgs e)
-        {
-            FormVisualiarDGV ver = new FormVisualiarDGV();
-
-            
-            ver.Show();
-
-        }
+        
 
         private void panelTitulo_Paint(object sender, PaintEventArgs e)
         {
