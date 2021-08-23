@@ -106,5 +106,13 @@ namespace ProyectoGramaticas
             btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
             btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
         }
+
+        private void btnAnalizarCadena_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormAnalizarCadena());
+            btnTablaAnalisis.BackColor = Color.FromArgb(32, 30, 45);
+            btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
+            btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
+        }
     }
 }

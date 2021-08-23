@@ -52,6 +52,12 @@
     <Compile Include="FormAmbRec.Designer.cs">
       <DependentUpon>FormAmbRec.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAnalizarCadena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnalizarCadena.Designer.cs">
+      <DependentUpon>FormAnalizarCadena.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrimSig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAmbRec.resx">
       <DependentUpon>FormAmbRec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnalizarCadena.resx">
+      <DependentUpon>FormAnalizarCadena.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrimSig.resx">
       <DependentUpon>FormPrimSig.cs</DependentUpon>

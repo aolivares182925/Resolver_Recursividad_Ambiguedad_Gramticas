@@ -41,6 +41,7 @@ namespace ProyectoGramaticas
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnAnalizarCadena = new System.Windows.Forms.Button();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelBotones1.SuspendLayout();
@@ -86,6 +87,7 @@ namespace ProyectoGramaticas
             // panelBotones1
             // 
             this.panelBotones1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelBotones1.Controls.Add(this.btnAnalizarCadena);
             this.panelBotones1.Controls.Add(this.btnTablaAnalisis);
             this.panelBotones1.Controls.Add(this.btnPrimySig);
             this.panelBotones1.Controls.Add(this.btnRRecyAmb);
@@ -201,6 +203,26 @@ namespace ProyectoGramaticas
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // btnAnalizarCadena
+            // 
+            this.btnAnalizarCadena.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAnalizarCadena.FlatAppearance.BorderSize = 0;
+            this.btnAnalizarCadena.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnAnalizarCadena.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.btnAnalizarCadena.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
+            this.btnAnalizarCadena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnalizarCadena.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnalizarCadena.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAnalizarCadena.Location = new System.Drawing.Point(0, 395);
+            this.btnAnalizarCadena.Name = "btnAnalizarCadena";
+            this.btnAnalizarCadena.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAnalizarCadena.Size = new System.Drawing.Size(210, 65);
+            this.btnAnalizarCadena.TabIndex = 7;
+            this.btnAnalizarCadena.Text = "Analizar Cadena";
+            this.btnAnalizarCadena.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnalizarCadena.UseVisualStyleBackColor = true;
+            this.btnAnalizarCadena.Click += new System.EventHandler(this.btnAnalizarCadena_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -245,6 +267,7 @@ namespace ProyectoGramaticas
         private System.Windows.Forms.Button btnTablaAnalisis;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnAnalizarCadena;
     }
 }
 
