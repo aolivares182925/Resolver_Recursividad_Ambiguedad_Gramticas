@@ -43,3 +43,4 @@ C:\Users\Miguel\Documents\GitHub\Resolver_Recursividad_Ambiguedad_Gramticas\Proy
 C:\Users\Miguel\Documents\GitHub\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.FormPrimSig.resources
 C:\Users\Miguel\Documents\GitHub\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.FormVisualiarDGV.resources
 E:\GITHUB REPOSITORIOS\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.FormAnalizarCadena.resources
+C:\Users\Miguel\Documents\GitHub\Resolver_Recursividad_Ambiguedad_Gramticas\ProyectoGramaticas\ProyectoGramaticas\obj\Debug\ProyectoGramaticas.FormAnalizarCadena.resources

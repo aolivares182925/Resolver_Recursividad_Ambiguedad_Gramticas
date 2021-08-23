@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -617,13 +618,31 @@ namespace LibreriaFunciones
                 {
                     if (F)
                     {
-                        r += k + "->";
+                        r += k + " -> ";
                         F = false;
                     }
                     else
                     {
-                        r += k;
+                        r += k + " ";
                     }
+                }
+                return r;
+            }
+            else
+            {
+                return "error";
+            }
+        }
+
+        static string ConvertLtoS2(List<string> L)
+        {
+            string r = "";
+            if (L.Count > 0)
+            {
+                foreach (string k in L)
+                {
+                    r += k + " ";
+
                 }
                 return r;
             }
@@ -646,6 +665,123 @@ namespace LibreriaFunciones
                 }
             }
             return ind;
+        }
+
+        static int IndexFila(DataGridView DGV, string elem)
+        {
+            int ind = -1;
+            for (int i = 0; i < DGV.Rows.Count - 1; i++)
+            {
+                if (DGV.Rows[i].Cells[0].Value.ToString() == elem)
+                {
+                    ind = i;
+                    break;
+                }
+            }
+            return ind;
+        }
+        
+
+        static string getAction(string P, string C, DataGridView DGV)
+        {
+            int i = IndexFila(DGV, P);
+            int j = SearchIndex(DGV, C);
+            try
+            {
+                string temp = DGV.Rows[i].Cells[j].Value.ToString();
+                return temp;
+            }
+            catch (Exception E)
+            {
+                return "error2";
+            }
+
+        }
+
+        public string TablaVerificar(DataGridView DGV, DataGridView DGV2, Stack Cadena,
+            Stack Pila)
+        {
+            string Respuesta = "";
+            Pila.Push("$");
+            Pila.Push(DGV.Rows[0].Cells[0].Value.ToString());
+
+            List<string> ac = new List<string> { "aa" };
+            while (ac[0] != "error" || ac[0] != "exito")
+            {
+                string p = Pila.Peek().ToString();
+                string c = Cadena.Peek().ToString();
+
+                if (p == "$" && c == "$")
+                {
+                    ac[0] = "exito mi rey";
+                    string pila = String.Join("", Pila.ToArray());
+                    string cadena = String.Join("", Cadena.ToArray());
+                    DGV2.Rows.Add(pila, cadena, ac[0]);
+                    Respuesta= "Gramatica sin errores";                    
+                    break;
+                }
+                string accion = getAction(p, c, DGV);
+                //MessageBox.Show(accion + " ||| " +"p="+p+"  c="+c);
+                string[] Campos = null;
+                Campos = accion.Split(new char[] { ' ' });
+                ac = Campos.ToList();
+                if (ac[0] == "error")
+                {
+                    string pila = String.Join("", Pila.ToArray());
+                    string cadena = String.Join("", Cadena.ToArray());
+                    List<string> L = new List<string>();
+                    DGV2.Rows.Add(pila, cadena, ConvertLtoS2(ac));
+                    //label1.Text = "error mi kong";
+                    Respuesta = "Error en la gramatica";
+                    break;
+                }
+                else
+                {
+                    if (p == c && ac[0] == "error2")
+                    {
+
+                        ac[0] = "coincide";
+                        string pila = String.Join("", Pila.ToArray());
+                        string cadena = String.Join("", Cadena.ToArray());
+                        List<string> L = new List<string>();
+                        DGV2.Rows.Add(pila, cadena, ConvertLtoS2(ac));
+                        Cadena.Pop();
+                        Pila.Pop();
+
+                    }
+                    else
+                    {
+
+                        string v = ac[2];
+                        if (v == "vacio")
+                        {
+                            string pila = String.Join("", Pila.ToArray());
+                            string cadena = String.Join("", Cadena.ToArray());
+                            DGV2.Rows.Add(pila, cadena, ConvertLtoS2(ac));
+                            Pila.Pop();
+                        }
+                        else
+                        {
+                            string pila = String.Join("", Pila.ToArray());
+                            string cadena = String.Join("", Cadena.ToArray());
+                            DGV2.Rows.Add(pila, cadena, ConvertLtoS2(ac));
+                            Pila.Pop();
+                            List<string> Ge = ac.GetRange(2, ac.Count - 2);
+                            Ge.Reverse();
+                            foreach (string k in Ge)
+                            {
+                                if (k != "")
+                                {
+                                    Pila.Push(k);
+                                }
+                            }
+                        }
+
+
+                    }
+                }
+            }
+            return Respuesta;
         }
     }
 }
