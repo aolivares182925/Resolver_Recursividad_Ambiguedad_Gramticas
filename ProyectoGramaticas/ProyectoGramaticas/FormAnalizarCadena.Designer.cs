@@ -36,6 +36,7 @@ namespace ProyectoGramaticas
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelPrograma = new System.Windows.Forms.Panel();
+            this.lRespuesta = new System.Windows.Forms.Label();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.txtCadena = new System.Windows.Forms.TextBox();
             this.lCadena = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@ namespace ProyectoGramaticas
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.btnResolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lRespuesta = new System.Windows.Forms.Label();
             this.panelPrograma.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
@@ -69,6 +69,17 @@ namespace ProyectoGramaticas
             this.panelPrograma.Name = "panelPrograma";
             this.panelPrograma.Size = new System.Drawing.Size(1300, 701);
             this.panelPrograma.TabIndex = 7;
+            // 
+            // lRespuesta
+            // 
+            this.lRespuesta.AutoSize = true;
+            this.lRespuesta.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRespuesta.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lRespuesta.Location = new System.Drawing.Point(679, 374);
+            this.lRespuesta.Name = "lRespuesta";
+            this.lRespuesta.Size = new System.Drawing.Size(109, 23);
+            this.lRespuesta.TabIndex = 19;
+            this.lRespuesta.Text = "Respuesta";
             // 
             // btnVerificar
             // 
@@ -229,7 +240,7 @@ namespace ProyectoGramaticas
             this.btnResolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResolver.Font = new System.Drawing.Font("Consolas", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
-            this.btnResolver.Location = new System.Drawing.Point(992, 20);
+            this.btnResolver.Location = new System.Drawing.Point(1014, 20);
             this.btnResolver.Name = "btnResolver";
             this.btnResolver.Size = new System.Drawing.Size(262, 62);
             this.btnResolver.TabIndex = 12;
@@ -248,17 +259,6 @@ namespace ProyectoGramaticas
             this.label1.Size = new System.Drawing.Size(606, 40);
             this.label1.TabIndex = 11;
             this.label1.Text = "Tabla de Verificacion de Cadena";
-            // 
-            // lRespuesta
-            // 
-            this.lRespuesta.AutoSize = true;
-            this.lRespuesta.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lRespuesta.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lRespuesta.Location = new System.Drawing.Point(679, 374);
-            this.lRespuesta.Name = "lRespuesta";
-            this.lRespuesta.Size = new System.Drawing.Size(109, 23);
-            this.lRespuesta.TabIndex = 19;
-            this.lRespuesta.Text = "Respuesta";
             // 
             // FormAnalizarCadena
             // 

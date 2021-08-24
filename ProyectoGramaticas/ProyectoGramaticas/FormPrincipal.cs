@@ -67,7 +67,7 @@ namespace ProyectoGramaticas
             btnRRecyAmb.BackColor = Color.FromArgb(32, 30, 45);
             btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
             btnTablaAnalisis.BackColor = Color.FromArgb(11, 7, 17);
-
+            btnAnalizarCadena.BackColor = Color.FromArgb(11, 7, 17);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace ProyectoGramaticas
             btnPrimySig.BackColor = Color.FromArgb(32, 30, 45);
             btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
             btnTablaAnalisis.BackColor = Color.FromArgb(11, 7, 17);
-
+            btnAnalizarCadena.BackColor = Color.FromArgb(11, 7, 17);
 
         }
 
@@ -105,14 +105,16 @@ namespace ProyectoGramaticas
             btnTablaAnalisis.BackColor = Color.FromArgb(32, 30, 45);
             btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
             btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
+            btnAnalizarCadena.BackColor = Color.FromArgb(11, 7, 17);
         }
 
         private void btnAnalizarCadena_Click(object sender, EventArgs e)
         {
             openChildForm(new FormAnalizarCadena());
-            btnTablaAnalisis.BackColor = Color.FromArgb(32, 30, 45);
+            btnAnalizarCadena.BackColor = Color.FromArgb(32, 30, 45);
             btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
             btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
+            btnTablaAnalisis.BackColor = Color.FromArgb(11, 7, 17);
         }
     }
 }
