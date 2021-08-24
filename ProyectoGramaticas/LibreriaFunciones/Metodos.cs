@@ -705,7 +705,7 @@ namespace LibreriaFunciones
             Pila.Push("$");
             Pila.Push(DGV.Rows[0].Cells[0].Value.ToString());
 
-            List<string> ac = new List<string> { "aa" };
+            List<string> ac = new List<string> { "aa" };//por mientras
             while (ac[0] != "error" || ac[0] != "exito")
             {
                 string p = Pila.Peek().ToString();
