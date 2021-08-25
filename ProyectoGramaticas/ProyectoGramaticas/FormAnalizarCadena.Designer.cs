@@ -75,7 +75,7 @@ namespace ProyectoGramaticas
             this.lRespuesta.AutoSize = true;
             this.lRespuesta.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lRespuesta.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lRespuesta.Location = new System.Drawing.Point(679, 374);
+            this.lRespuesta.Location = new System.Drawing.Point(675, 383);
             this.lRespuesta.Name = "lRespuesta";
             this.lRespuesta.Size = new System.Drawing.Size(109, 23);
             this.lRespuesta.TabIndex = 19;
@@ -156,7 +156,7 @@ namespace ProyectoGramaticas
             this.DGV2.RowHeadersVisible = false;
             this.DGV2.RowHeadersWidth = 51;
             this.DGV2.RowTemplate.Height = 24;
-            this.DGV2.Size = new System.Drawing.Size(609, 267);
+            this.DGV2.Size = new System.Drawing.Size(609, 280);
             this.DGV2.TabIndex = 16;
             // 
             // txtRespuesta
@@ -166,7 +166,7 @@ namespace ProyectoGramaticas
             this.txtRespuesta.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtRespuesta.Location = new System.Drawing.Point(12, 196);
             this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(645, 209);
+            this.txtRespuesta.Size = new System.Drawing.Size(645, 218);
             this.txtRespuesta.TabIndex = 15;
             this.txtRespuesta.Text = "El resultado se mostrara aqui";
             // 
@@ -205,7 +205,7 @@ namespace ProyectoGramaticas
             this.DGV1.DefaultCellStyle = dataGridViewCellStyle5;
             this.DGV1.EnableHeadersVisualStyles = false;
             this.DGV1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.DGV1.Location = new System.Drawing.Point(12, 411);
+            this.DGV1.Location = new System.Drawing.Point(12, 420);
             this.DGV1.Name = "DGV1";
             this.DGV1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -219,7 +219,7 @@ namespace ProyectoGramaticas
             this.DGV1.RowHeadersVisible = false;
             this.DGV1.RowHeadersWidth = 51;
             this.DGV1.RowTemplate.Height = 24;
-            this.DGV1.Size = new System.Drawing.Size(1276, 278);
+            this.DGV1.Size = new System.Drawing.Size(1276, 269);
             this.DGV1.TabIndex = 1;
             // 
             // panelTitulo

@@ -713,11 +713,11 @@ namespace LibreriaFunciones
 
                 if (p == "$" && c == "$")
                 {
-                    ac[0] = "exito mi rey";
+                    ac[0] = "exito";
                     string pila = String.Join("", Pila.ToArray());
                     string cadena = String.Join("", Cadena.ToArray());
                     DGV2.Rows.Add(pila, cadena, ac[0]);
-                    Respuesta= "Gramatica sin errores";                    
+                    Respuesta= "Por tanto, NO existe error de sintaxis";                    
                     break;
                 }
                 string accion = getAction(p, c, DGV);
@@ -732,7 +732,7 @@ namespace LibreriaFunciones
                     List<string> L = new List<string>();
                     DGV2.Rows.Add(pila, cadena, ConvertLtoS2(ac));
                     //label1.Text = "error mi kong";
-                    Respuesta = "Error en la gramatica";
+                    Respuesta = "Por tanto, SI existe error de sintaxis";
                     break;
                 }
                 else
