@@ -737,7 +737,7 @@ namespace LibreriaFunciones
                 }
                 else
                 {
-                    if (p == c && ac[0] == "error2")
+                    if (p == c)
                     {
 
                         ac[0] = "coincide";
@@ -749,9 +749,18 @@ namespace LibreriaFunciones
                         Pila.Pop();
 
                     }
-                    else
+                    else if (ac[0] == "error2")
                     {
-
+                        ac[0] = "error";
+                        string pila = String.Join("", Pila.ToArray());
+                        string cadena = String.Join("", Cadena.ToArray());
+                        List<string> L = new List<string>();
+                        DGV2.Rows.Add(pila, cadena, ConvertLtoS2(ac));
+                        Respuesta = "Por tanto, SI existe error de sintaxis";
+                        break;
+                    }
+                    else
+                    {                       
                         string v = ac[2];
                         if (v == "vacio")
                         {
