@@ -68,6 +68,7 @@ namespace ProyectoGramaticas
             btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
             btnTablaAnalisis.BackColor = Color.FromArgb(11, 7, 17);
             btnAnalizarCadena.BackColor = Color.FromArgb(11, 7, 17);
+            btnClausuraIrA.BackColor = Color.FromArgb(11, 7, 17);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -91,12 +92,7 @@ namespace ProyectoGramaticas
             btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
             btnTablaAnalisis.BackColor = Color.FromArgb(11, 7, 17);
             btnAnalizarCadena.BackColor = Color.FromArgb(11, 7, 17);
-
-        }
-
-        private void panelprograma1_Paint(object sender, PaintEventArgs e)
-        {
-
+            btnClausuraIrA.BackColor = Color.FromArgb(11, 7, 17);
         }
 
         private void btnTablaAnalisis_Click(object sender, EventArgs e)
@@ -106,6 +102,7 @@ namespace ProyectoGramaticas
             btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
             btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
             btnAnalizarCadena.BackColor = Color.FromArgb(11, 7, 17);
+            btnClausuraIrA.BackColor = Color.FromArgb(11, 7, 17);
         }
 
         private void btnAnalizarCadena_Click(object sender, EventArgs e)
@@ -115,6 +112,18 @@ namespace ProyectoGramaticas
             btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
             btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
             btnTablaAnalisis.BackColor = Color.FromArgb(11, 7, 17);
+            btnClausuraIrA.BackColor = Color.FromArgb(11, 7, 17);
+        }
+
+        private void btnClausuraIrA_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormAnalizarCadena());
+            btnAnalizarCadena.BackColor = Color.FromArgb(11, 7, 17);
+            btnPrimySig.BackColor = Color.FromArgb(11, 7, 17);
+            btnRRecyAmb.BackColor = Color.FromArgb(11, 7, 17);
+            btnTablaAnalisis.BackColor = Color.FromArgb(11, 7, 17);
+            btnClausuraIrA.BackColor = Color.FromArgb(32, 30, 45);
+
         }
     }
 }
