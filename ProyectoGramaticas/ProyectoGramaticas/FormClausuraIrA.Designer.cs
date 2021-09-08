@@ -30,17 +30,15 @@ namespace ProyectoGramaticas
         private void InitializeComponent()
         {
             this.panelPrograma = new System.Windows.Forms.Panel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.txtRespuesta = new System.Windows.Forms.RichTextBox();
             this.txtReglas = new System.Windows.Forms.RichTextBox();
             this.panelTitulo = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.panelPrograma.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +54,17 @@ namespace ProyectoGramaticas
             this.panelPrograma.Name = "panelPrograma";
             this.panelPrograma.Size = new System.Drawing.Size(1300, 628);
             this.panelPrograma.TabIndex = 3;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.richTextBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.richTextBox1.Location = new System.Drawing.Point(621, 6);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(667, 268);
+            this.richTextBox1.TabIndex = 12;
+            this.richTextBox1.Text = "Ingresar las reglas del conjunto aqui";
             // 
             // txtRespuesta
             // 
@@ -83,8 +92,6 @@ namespace ProyectoGramaticas
             // panelTitulo
             // 
             this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panelTitulo.Controls.Add(this.label3);
-            this.panelTitulo.Controls.Add(this.richTextBox2);
             this.panelTitulo.Controls.Add(this.button2);
             this.panelTitulo.Controls.Add(this.button1);
             this.panelTitulo.Controls.Add(this.label1);
@@ -95,6 +102,34 @@ namespace ProyectoGramaticas
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(1300, 172);
             this.panelTitulo.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
+            this.button2.Location = new System.Drawing.Point(1088, 92);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 62);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Resolver IrA";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
+            this.button1.Location = new System.Drawing.Point(812, 92);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(244, 62);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Resolver Clausura";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -130,67 +165,6 @@ namespace ProyectoGramaticas
             this.label2.TabIndex = 9;
             this.label2.Text = "Solo se ingresa una regla por linea\r\nDebe de tener el sgt. formato: A -> b * i";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
-            this.button1.Location = new System.Drawing.Point(515, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 62);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Resolver Clausura";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.richTextBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.richTextBox1.Location = new System.Drawing.Point(621, 6);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(667, 268);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "Ingresar las reglas del conjunto aqui";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.richTextBox2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.richTextBox2.Location = new System.Drawing.Point(1090, 110);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(198, 39);
-            this.richTextBox2.TabIndex = 13;
-            this.richTextBox2.Text = "";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(26)))), ((int)(((byte)(85)))));
-            this.button2.Location = new System.Drawing.Point(780, 92);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 62);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Resolver IrA";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(986, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 23);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Simbolo:";
-            // 
             // FormClausuraIrA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -215,8 +189,6 @@ namespace ProyectoGramaticas
         private System.Windows.Forms.RichTextBox txtRespuesta;
         private System.Windows.Forms.RichTextBox txtReglas;
         private System.Windows.Forms.Panel panelTitulo;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
